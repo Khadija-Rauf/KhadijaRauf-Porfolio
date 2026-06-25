@@ -130,6 +130,7 @@ sections.forEach(s => {
 // ============================================================
 // TYPEWRITER EFFECT
 // ============================================================
+document.addEventListener('DOMContentLoaded', function () {
 const titles = [
   'Software Engineer',
   'Java Developer',
@@ -172,3 +173,4 @@ function typeWriter() {
 }
 
 typeWriter();
+});
