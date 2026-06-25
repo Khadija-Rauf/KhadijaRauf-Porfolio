@@ -1,7 +1,5 @@
 // ============================================================
-// script.js — KR Portfolio
-// Handles: nav, mobile menu, sliders with dots, scroll reveal
-// ✏️ No content changes needed here.
+// script.js
 // ============================================================
 
 // --- Nav scroll shadow ---
@@ -127,3 +125,50 @@ const revealObserver = new IntersectionObserver(entries => {
 sections.forEach(s => {
   if (!s.classList.contains('hero')) revealObserver.observe(s);
 });
+
+
+// ============================================================
+// TYPEWRITER EFFECT
+// ============================================================
+const titles = [
+  'Software Engineer',
+  'Java Developer',
+  'Spring Boot Developer',
+  'Backend Engineer',
+  'REST API Specialist',
+  // ✏️ UPDATE: Add or remove titles here
+];
+
+const typedText = document.getElementById('typedText');
+let titleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeWriter() {
+  const current = titles[titleIndex];
+
+  if (isDeleting) {
+    typedText.textContent = current.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typedText.textContent = current.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let speed = isDeleting ? 60 : 100;
+
+  if (!isDeleting && charIndex === current.length) {
+    // Pause at end of word before deleting
+    speed = 1800;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    // Move to next title
+    isDeleting = false;
+    titleIndex = (titleIndex + 1) % titles.length;
+    speed = 400;
+  }
+
+  setTimeout(typeWriter, speed);
+}
+
+typeWriter();
