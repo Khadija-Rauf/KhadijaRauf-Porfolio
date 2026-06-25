@@ -1,281 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KR — Software Engineer</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- ✏️ UPDATE: Change the page title above to your full name if you prefer -->
+  <title>KR — Java Backend Engineer</title>
+  <!-- ✏️ UPDATE: Change page title to your full name -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- ========== HEADER / HERO ========== -->
-  <header class="hero">
-    <nav class="nav">
-      <span class="nav-logo">KR</span>
-      <!-- ✏️ UPDATE: Replace "KR" with your initials or full name -->
-      <ul class="nav-links">
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">KR</a>
+      <!-- ✏️ UPDATE: Your initials or short name -->
+      <ul class="nav-links" id="navLinks">
         <li><a href="#summary">Summary</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-    </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
 
-    <div class="hero-content">
-      <p class="hero-eyebrow">Software Engineer</p>
-      <h1 class="hero-name">KR</h1>
-      <!-- ✏️ UPDATE: Replace with your full name -->
-      <p class="hero-tagline">Java · Spring Boot · Backend Systems</p>
-      <!-- ✏️ UPDATE: Adjust tagline to reflect your stack/specialty -->
-      <div class="hero-cta">
-        <a href="mailto:your@email.com" class="btn-primary">Get in Touch</a>
-        <!-- ✏️ UPDATE: Replace with your actual email -->
-        <a href="https://github.com/yourusername" class="btn-secondary" target="_blank">GitHub ↗</a>
-        <!-- ✏️ UPDATE: Replace with your GitHub URL -->
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <!-- Animated floating orbs background -->
+    <div class="hero-bg">
+      <span class="orb orb1"></span>
+      <span class="orb orb2"></span>
+      <span class="orb orb3"></span>
+    </div>
+
+    <div class="hero-split">
+      <!-- LEFT: Text -->
+      <div class="hero-text">
+        <p class="hero-eyebrow">Hello, I'm</p>
+        <h1 class="hero-name">KR</h1>
+        <!-- ✏️ UPDATE: Your full name -->
+        <p class="hero-title">Java Backend Engineer</p>
+        <!-- ✏️ UPDATE: Your job title -->
+        <p class="hero-sub">
+          5+ years crafting scalable backend systems with Java &amp; Spring Boot.
+          Passionate about clean APIs, reliable architecture, and continuous learning.
+        </p>
+        <!-- ✏️ UPDATE: Your own one-liner summary -->
+        <div class="hero-badges">
+          <span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>Microservices</span>
+          <!-- ✏️ UPDATE: Your key tech tags -->
+        </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-gold">Get in Touch</a>
+          <a href="#projects" class="btn-outline">View Projects</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Photo + Summary card -->
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <img
+            src="YOUR_PHOTO.jpg"
+            alt="KR — Java Backend Engineer"
+            class="hero-photo"
+            id="heroPhoto"
+            onerror="this.style.display='none'; document.getElementById('heroPhotoFallback').style.display='flex';"
+          />
+          <!-- ✏️ UPDATE: Replace YOUR_PHOTO.jpg with your actual photo filename.
+               Put the image in the same folder as index.html. -->
+          <div class="hero-photo-fallback" id="heroPhotoFallback">
+            <span class="hero-initials">KR</span>
+            <!-- ✏️ UPDATE: Your initials shown if photo is missing -->
+          </div>
+        </div>
+        <div class="hero-summary-card">
+          <div class="summary-item"><span class="si-icon">🎓</span><span>B.Tech CS — PUU University, 2019</span></div>
+          <div class="summary-item"><span class="si-icon">💼</span><span>5+ Years at Current Role</span></div>
+          <div class="summary-item"><span class="si-icon">📍</span><span>India</span></div>
+          <!-- ✏️ UPDATE: Location, company, degree details -->
+        </div>
       </div>
     </div>
-  </header>
 
-  <main>
+    <!-- Scroll hint -->
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- ========== SUMMARY ========== -->
-    <section id="summary" class="section">
-      <div class="container">
-        <span class="section-label">Summary</span>
-        <h2 class="section-title">About Me</h2>
-        <div class="summary-grid">
-          <p class="summary-text">
-            I'm a backend software engineer with 5+ years of experience building
-            robust, scalable Java applications. I graduated with a degree in
-            Computer Science from PUU University in 2019 and have since been
-            working with Java and Spring Boot to design and deliver backend systems.
-          </p>
-          <!-- ✏️ UPDATE: Rewrite this paragraph in your own words. Add personality! -->
-          <div class="summary-stats">
-            <div class="stat">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">2019</span>
-              <span class="stat-label">CS Graduate, PUU</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">Java</span>
-              <span class="stat-label">Primary Stack</span>
-            </div>
-            <!-- ✏️ UPDATE: Adjust numbers/labels to match your real stats -->
+  <!-- ========== SUMMARY SECTION ========== -->
+  <section class="section" id="summary">
+    <div class="container">
+      <p class="section-eyebrow">Summary</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <p class="about-text">
+          I'm a backend software engineer with over 5 years of hands-on experience building
+          production-grade applications using Java and the Spring ecosystem. Since graduating
+          from PUU University in 2019, I've been focused on designing robust REST APIs,
+          optimising database interactions, and working within agile teams to ship reliable software.
+          I believe in writing code that is simple to read, easy to maintain, and built to scale.
+        </p>
+        <!-- ✏️ UPDATE: Rewrite in your own words -->
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-n">5+</span>
+            <span class="stat-l">Years Experience</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-n">2019</span>
+            <span class="stat-l">CS Graduate</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-n">Java</span>
+            <span class="stat-l">Core Stack</span>
           </div>
         </div>
+        <!-- ✏️ UPDATE: Change these stats to reflect your real numbers -->
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ========== SKILLS ========== -->
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <span class="section-label">Skills</span>
-        <h2 class="section-title">What I Work With</h2>
-        <div class="skills-grid">
+  <!-- ========== SKILLS SLIDER ========== -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <p class="section-eyebrow">Skills</p>
+      <h2 class="section-title">What I Work With</h2>
 
-          <div class="skill-card">
-            <div class="skill-icon">☕</div>
-            <h3>Languages</h3>
-            <ul>
-              <li>Java</li>
-              <li>SQL</li>
-              <li>Bash</li>
-              <!-- ✏️ UPDATE: Add/remove languages you know -->
-            </ul>
+      <div class="slider-wrap" id="skillsSlider">
+        <button class="slider-btn slider-prev" data-target="skillsTrack" aria-label="Previous">&#8592;</button>
+        <div class="slider-viewport">
+          <div class="slider-track" id="skillsTrack">
+
+            <!-- SKILL SLIDE -->
+            <div class="slide skill-slide">
+              <a href="https://spring.io/projects/spring-boot" target="_blank" class="slide-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/200px-Spring_Boot.svg.png"
+                     alt="Spring Boot" class="slide-img"/>
+                <div class="slide-body">
+                  <h3>Spring Boot</h3>
+                  <p>Building production-ready microservices and REST APIs with Spring Boot, MVC, Security, and Data JPA.</p>
+                  <span class="slide-tag">Core Framework</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide skill-slide">
+              <a href="https://www.java.com" target="_blank" class="slide-link">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+                     alt="Java" class="slide-img slide-img-sm"/>
+                <div class="slide-body">
+                  <h3>Java</h3>
+                  <p>5+ years writing clean, object-oriented Java — from core fundamentals to modern Java 11/17 features.</p>
+                  <span class="slide-tag">Primary Language</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide skill-slide">
+              <a href="https://www.mysql.com" target="_blank" class="slide-link">
+                <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg"
+                     alt="MySQL" class="slide-img"/>
+                <div class="slide-body">
+                  <h3>MySQL / PostgreSQL</h3>
+                  <p>Designing schemas, writing optimised queries, and managing relational data with Hibernate/JPA.</p>
+                  <span class="slide-tag">Databases</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide skill-slide">
+              <a href="https://www.docker.com" target="_blank" class="slide-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg"
+                     alt="Docker" class="slide-img"/>
+                <div class="slide-body">
+                  <h3>Docker &amp; DevOps</h3>
+                  <p>Containerising applications with Docker, managing builds with Maven, and working with CI/CD pipelines.</p>
+                  <span class="slide-tag">Tools &amp; Infra</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide skill-slide">
+              <a href="https://git-scm.com" target="_blank" class="slide-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg"
+                     alt="Git" class="slide-img"/>
+                <div class="slide-body">
+                  <h3>Git &amp; GitHub</h3>
+                  <p>Version control, branching strategies, pull requests, and collaborative code review workflows.</p>
+                  <span class="slide-tag">Version Control</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="slide skill-slide">
+              <a href="https://redis.io" target="_blank" class="slide-link">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Redis_Logo.svg"
+                     alt="Redis" class="slide-img"/>
+                <div class="slide-body">
+                  <h3>Redis &amp; Caching</h3>
+                  <p>Implementing caching strategies and session management with Redis for high-performance systems.</p>
+                  <span class="slide-tag">Caching</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- ✏️ ADD MORE: Copy a skill-slide block and paste here for each new skill -->
+
           </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">🌱</div>
-            <h3>Frameworks</h3>
-            <ul>
-              <li>Spring Boot</li>
-              <li>Spring MVC</li>
-              <li>Hibernate / JPA</li>
-              <!-- ✏️ UPDATE: Add frameworks you've used -->
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">🗄️</div>
-            <h3>Databases</h3>
-            <ul>
-              <li>MySQL</li>
-              <li>PostgreSQL</li>
-              <li>Redis</li>
-              <!-- ✏️ UPDATE: Add databases you've worked with -->
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">🛠️</div>
-            <h3>Tools & DevOps</h3>
-            <ul>
-              <li>Git / GitHub</li>
-              <li>Docker</li>
-              <li>Maven</li>
-              <!-- ✏️ UPDATE: Add tools you regularly use -->
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">🔗</div>
-            <h3>Concepts</h3>
-            <ul>
-              <li>REST APIs</li>
-              <li>Microservices</li>
-              <li>Agile / Scrum</li>
-              <!-- ✏️ UPDATE: Add concepts / methodologies you know -->
-            </ul>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-icon">☁️</div>
-            <h3>Cloud & Infra</h3>
-            <ul>
-              <li>AWS (basics)</li>
-              <li>Linux</li>
-              <li>CI/CD</li>
-              <!-- ✏️ UPDATE: Add cloud/infra you've used -->
-            </ul>
-          </div>
-
         </div>
+        <button class="slider-btn slider-next" data-target="skillsTrack" aria-label="Next">&#8594;</button>
       </div>
-    </section>
+      <div class="slider-dots" id="skillsDots"></div>
+    </div>
+  </section>
 
-    <!-- ========== PROJECTS ========== -->
-    <section id="projects" class="section">
-      <div class="container">
-        <span class="section-label">Projects</span>
-        <h2 class="section-title">Things I've Built</h2>
-        <div class="projects-grid">
+  <!-- ========== PROJECTS SLIDER ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section-eyebrow">Projects</p>
+      <h2 class="section-title">Things I've Built</h2>
 
-          <!-- PROJECT CARD TEMPLATE — duplicate this block for each project -->
-          <div class="project-card">
-            <div class="project-top">
-              <span class="project-tag">Spring Boot</span>
-              <!-- ✏️ UPDATE: Change tag to the main tech used -->
-              <a href="https://github.com/yourusername/project-one" class="project-link" target="_blank">↗</a>
-              <!-- ✏️ UPDATE: Link to your repo or live project -->
+      <div class="slider-wrap" id="projectsSlider">
+        <button class="slider-btn slider-prev" data-target="projectsTrack" aria-label="Previous">&#8592;</button>
+        <div class="slider-viewport">
+          <div class="slider-track" id="projectsTrack">
+
+            <!-- PROJECT SLIDE — clicking image opens the project link -->
+            <div class="slide project-slide">
+              <a href="https://github.com/yourusername/project-one" target="_blank" class="slide-link">
+                <!-- ✏️ UPDATE: Replace href with your actual project/repo link -->
+                <img
+                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80"
+                  alt="Project One"
+                  class="slide-img project-img"
+                />
+                <!-- ✏️ UPDATE: Replace src with a screenshot of your project, or use a relevant Unsplash image URL -->
+                <div class="slide-body">
+                  <div class="project-meta">
+                    <span class="slide-tag">Spring Boot</span>
+                    <span class="project-arrow">↗ View Project</span>
+                  </div>
+                  <h3>Project One</h3>
+                  <!-- ✏️ UPDATE: Your project name -->
+                  <p>Describe what this project does, the problem it solves, and the outcome. Keep it to 2–3 sentences.</p>
+                  <!-- ✏️ UPDATE: Your project description -->
+                  <div class="tech-chips">
+                    <span>Java</span><span>Spring Boot</span><span>MySQL</span>
+                    <!-- ✏️ UPDATE: Tech stack for this project -->
+                  </div>
+                </div>
+              </a>
             </div>
-            <h3 class="project-title">Project One</h3>
-            <!-- ✏️ UPDATE: Add your project name -->
-            <p class="project-desc">
-              A brief description of what this project does, what problem it solves,
-              and what technologies were used to build it.
-            </p>
-            <!-- ✏️ UPDATE: Write 2-3 sentences describing this project -->
-            <div class="project-stack">
-              <span>Java</span><span>Spring Boot</span><span>MySQL</span>
-              <!-- ✏️ UPDATE: Add the tech stack chips for this project -->
+
+            <div class="slide project-slide">
+              <a href="https://github.com/yourusername/project-two" target="_blank" class="slide-link">
+                <img
+                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+                  alt="Project Two"
+                  class="slide-img project-img"
+                />
+                <div class="slide-body">
+                  <div class="project-meta">
+                    <span class="slide-tag">REST API</span>
+                    <span class="project-arrow">↗ View Project</span>
+                  </div>
+                  <h3>Project Two</h3>
+                  <p>A brief description of this project. What was built, what was the challenge, what was the result?</p>
+                  <div class="tech-chips">
+                    <span>Java</span><span>REST</span><span>PostgreSQL</span>
+                  </div>
+                </div>
+              </a>
             </div>
+
+            <div class="slide project-slide">
+              <a href="https://github.com/yourusername/project-three" target="_blank" class="slide-link">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+                  alt="Project Three"
+                  class="slide-img project-img"
+                />
+                <div class="slide-body">
+                  <div class="project-meta">
+                    <span class="slide-tag">Microservices</span>
+                    <span class="project-arrow">↗ View Project</span>
+                  </div>
+                  <h3>Project Three</h3>
+                  <p>Another project description here. Focus on what you built and what you learned from it.</p>
+                  <div class="tech-chips">
+                    <span>Spring Cloud</span><span>Docker</span><span>Redis</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- ✏️ ADD MORE: Copy a project-slide block here for each new project -->
+
           </div>
-
-          <div class="project-card">
-            <div class="project-top">
-              <span class="project-tag">REST API</span>
-              <a href="https://github.com/yourusername/project-two" class="project-link" target="_blank">↗</a>
-            </div>
-            <h3 class="project-title">Project Two</h3>
-            <p class="project-desc">
-              Describe what this project does and the impact or outcome it had.
-              Keep it concise and focused on what you built.
-            </p>
-            <div class="project-stack">
-              <span>Java</span><span>REST</span><span>PostgreSQL</span>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-top">
-              <span class="project-tag">Microservices</span>
-              <a href="https://github.com/yourusername/project-three" class="project-link" target="_blank">↗</a>
-            </div>
-            <h3 class="project-title">Project Three</h3>
-            <p class="project-desc">
-              Another project description here. What was your role? What did you
-              learn from building it?
-            </p>
-            <div class="project-stack">
-              <span>Spring Cloud</span><span>Docker</span><span>Redis</span>
-            </div>
-          </div>
-          <!-- ✏️ ADD MORE: Copy a project-card block above and paste here for each new project -->
-
         </div>
+        <button class="slider-btn slider-next" data-target="projectsTrack" aria-label="Next">&#8594;</button>
       </div>
-    </section>
+      <div class="slider-dots" id="projectsDots"></div>
+    </div>
+  </section>
 
-    <!-- ========== EXPERIENCE ========== -->
-    <section id="experience" class="section section-alt">
-      <div class="container">
-        <span class="section-label">Experience</span>
-        <h2 class="section-title">Where I've Worked</h2>
-        <div class="timeline">
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section section-dark" id="experience">
+    <div class="container">
+      <p class="section-eyebrow">Experience</p>
+      <h2 class="section-title">Where I've Worked</h2>
+      <div class="timeline">
 
-          <!-- EXPERIENCE ITEM TEMPLATE — duplicate for each role -->
-          <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="timeline-date">2019 — Present</span>
-              <!-- ✏️ UPDATE: Change date range -->
-            </div>
-            <div class="timeline-body">
-              <h3 class="timeline-role">Java Backend Engineer</h3>
-              <!-- ✏️ UPDATE: Your job title -->
-              <p class="timeline-company">Company Name · City, Country</p>
-              <!-- ✏️ UPDATE: Company name and location -->
-              <ul class="timeline-points">
-                <li>Built and maintained REST APIs using Java and Spring Boot to support core business operations.</li>
-                <li>Designed and optimised database schemas and queries in MySQL/PostgreSQL.</li>
-                <li>Collaborated with cross-functional teams in an Agile environment.</li>
-                <!-- ✏️ UPDATE: Replace with your real bullet points. 3–5 is ideal. -->
-              </ul>
-              <div class="timeline-tags">
-                <span>Java</span><span>Spring Boot</span><span>MySQL</span>
-                <!-- ✏️ UPDATE: Tech used in this role -->
-              </div>
+        <div class="tl-item">
+          <div class="tl-left">
+            <span class="tl-date">2019 — Present</span>
+            <!-- ✏️ UPDATE: Your actual date range -->
+          </div>
+          <div class="tl-dot"></div>
+          <div class="tl-right">
+            <h3 class="tl-role">Java Backend Engineer</h3>
+            <!-- ✏️ UPDATE: Your job title -->
+            <p class="tl-company">Company Name &nbsp;·&nbsp; City, India</p>
+            <!-- ✏️ UPDATE: Company name and location -->
+            <ul class="tl-points">
+              <li>Built and maintained REST APIs using Java and Spring Boot to support core business operations.</li>
+              <li>Designed and optimised relational database schemas in MySQL and PostgreSQL.</li>
+              <li>Participated in code reviews, sprint planning, and delivery in an Agile/Scrum environment.</li>
+              <li>Integrated third-party services and internal microservices via REST and messaging queues.</li>
+              <!-- ✏️ UPDATE: Your actual responsibilities. 3–5 bullets is ideal. -->
+            </ul>
+            <div class="tl-tags">
+              <span>Java</span><span>Spring Boot</span><span>MySQL</span><span>Docker</span>
+              <!-- ✏️ UPDATE: Tech used in this role -->
             </div>
           </div>
-
-          <!-- ✏️ ADD MORE: Paste another timeline-item block here for each previous role -->
-
-          <div class="timeline-item">
-            <div class="timeline-meta">
-              <span class="timeline-date">2019</span>
-            </div>
-            <div class="timeline-body">
-              <h3 class="timeline-role">B.Tech — Computer Science</h3>
-              <p class="timeline-company">PUU University</p>
-              <!-- ✏️ UPDATE: Full university name if you prefer -->
-              <ul class="timeline-points">
-                <li>Graduated with a degree in Computer Science.</li>
-                <!-- ✏️ UPDATE: Add relevant coursework, GPA, or achievements if you like -->
-              </ul>
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
 
-  </main>
+        <div class="tl-item">
+          <div class="tl-left">
+            <span class="tl-date">2019</span>
+          </div>
+          <div class="tl-dot"></div>
+          <div class="tl-right">
+            <h3 class="tl-role">B.Tech — Computer Science</h3>
+            <p class="tl-company">PUU University</p>
+            <!-- ✏️ UPDATE: Full university name if you want -->
+            <ul class="tl-points">
+              <li>Graduated with a degree in Computer Science &amp; Engineering.</li>
+              <!-- ✏️ UPDATE: Add notable coursework, GPA, or achievements if relevant -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- ✏️ ADD MORE: Paste a tl-item block here for each previous role -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="container contact-container">
+      <p class="section-eyebrow">Contact</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-sub">
+        Open to new opportunities, collaborations, or just a good tech conversation.
+        <!-- ✏️ UPDATE: Change this line if you want -->
+      </p>
+      <div class="contact-cards">
+        <a href="mailto:your@email.com" class="contact-card">
+          <!-- ✏️ UPDATE: Replace with your actual email address -->
+          <span class="cc-icon">✉️</span>
+          <span class="cc-label">Email Me</span>
+          <span class="cc-value">your@email.com</span>
+          <!-- ✏️ UPDATE: Same email here for display -->
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="contact-card">
+          <!-- ✏️ UPDATE: Your GitHub URL -->
+          <span class="cc-icon">🐙</span>
+          <span class="cc-label">GitHub</span>
+          <span class="cc-value">github.com/yourusername</span>
+          <!-- ✏️ UPDATE: Your GitHub username -->
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-card">
+          <!-- ✏️ UPDATE: Your LinkedIn URL -->
+          <span class="cc-icon">💼</span>
+          <span class="cc-label">LinkedIn</span>
+          <span class="cc-value">linkedin.com/in/yourprofile</span>
+          <!-- ✏️ UPDATE: Your LinkedIn profile path -->
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
-    <div class="container">
-      <p>Designed & built by KR &nbsp;·&nbsp;
-        <a href="mailto:your@email.com">your@email.com</a> &nbsp;·&nbsp;
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a> &nbsp;·&nbsp;
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      </p>
-      <!-- ✏️ UPDATE: Email, GitHub, LinkedIn links -->
-    </div>
+    <p>Designed &amp; built by <strong>KR</strong> &nbsp;·&nbsp; 2025</p>
+    <!-- ✏️ UPDATE: Your name and year -->
   </footer>
 
   <script src="script.js"></script>
